@@ -1,23 +1,20 @@
-using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
 using DelaiLivraisonAPI.Models;
+using Microsoft.AspNetCore.Mvc;
 
-namespace SampleAPI.Controllers.v2
+namespace DelaiLivraisonAPI.Controllers.v1
 {
     [ApiController]
-    //[Route("api/v{version:apiVersion}/users")]
     [Route("api/users")]
-    [ApiVersion("2.0")]
+
     public class UsersController : ControllerBase
     {
         [HttpGet()]
         public IActionResult AllUsers()
         {
             // mimiking db operation
-            List<UserV2> users = new List<UserV2>()
+            List<UserV1> users = new List<UserV1>()
             {
-                new UserV2
+                new UserV1
                 {
                     Track = 999999999,
                     ServiceUPS = "UPS Standard",
@@ -26,7 +23,7 @@ namespace SampleAPI.Controllers.v2
                     DateLivré="01-05-2022",
                     TempsLivré="14:40:20",
                     Signé="Donald"},
-                new UserV2
+                new UserV1
                 {
                     Track = 222222222,
                     ServiceUPS = "UPS Standard",
@@ -36,7 +33,7 @@ namespace SampleAPI.Controllers.v2
                     TempsLivré="10:40:20",   
                     Signé="Neil"
                 },
-                new UserV2
+                new UserV1
                 {
                    Track = 333333333,
                     ServiceUPS = "UPS Standard",
